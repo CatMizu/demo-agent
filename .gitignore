@@ -1,0 +1,23 @@
+# Environment variables (sensitive keys)
+.env
+
+# Virtual environment
+.venv/
+
+# LangGraph API local state
+.langgraph_api/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# macOS
+.DS_Store
