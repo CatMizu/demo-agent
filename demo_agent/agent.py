@@ -42,3 +42,34 @@ graph = create_deep_agent(
     system_prompt=SYSTEM_PROMPT,
     backend=FilesystemBackend(root_dir=".", virtual_mode=True),
 )
+
+
+# Example: how to add sub-agents for parallel research
+#
+# graph = create_deep_agent(
+#     name="municipal-researcher",
+#     model="claude-sonnet-4-20250514",
+#     tools=[internet_search],
+#     system_prompt=SYSTEM_PROMPT,
+#     backend=FilesystemBackend(root_dir=".", virtual_mode=True),
+#     subagents=[
+#         {
+#             "name": "cmhc-researcher",
+#             "description": "Fetches CMHC housing supply and starts data",
+#             "system_prompt": "You specialize in CMHC data. Search cmhc-schl.gc.ca and save findings to /research/cmhc.md.",
+#             "tools": [internet_search],
+#         },
+#         {
+#             "name": "statcan-researcher",
+#             "description": "Fetches Statistics Canada demographic and housing data",
+#             "system_prompt": "You specialize in Statistics Canada data. Search statcan.gc.ca and save findings to /research/statcan.md.",
+#             "tools": [internet_search],
+#         },
+#         {
+#             "name": "municipal-researcher",
+#             "description": "Fetches municipal open data and zoning bylaws",
+#             "system_prompt": "You specialize in municipal open data portals. Search city websites and save findings to /research/municipal.md.",
+#             "tools": [internet_search],
+#         },
+#     ],
+# )
